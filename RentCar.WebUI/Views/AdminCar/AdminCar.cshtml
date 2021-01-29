@@ -1,0 +1,125 @@
+﻿@model IEnumerable<RentCar.Domain.Entities.Car>
+
+@{
+    ViewBag.Title = "AdminCar";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>AdminCar</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateCar")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand.NameBrand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand.NameModel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.NameCategory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeBody.NameBody)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Transmission.NameTransmission)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fuel.NameFuel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.volumeEndine)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.countDoor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.costOfDay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.img)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.shortDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.longDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isFavorite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.available)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Brand.NameBrand)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Brand.NameModel)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Category.NameCategory)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TypeBody.NameBody)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Transmission.NameTransmission)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Fuel.NameFuel)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.volumeEndine)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.year)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.countDoor)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.price)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.costOfDay)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.img)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.shortDesc)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.longDesc)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.isFavorite)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.available)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.NumberCar }) |
+        @Html.ActionLink("Details", "Details", new { id = item.NumberCar }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.NumberCar })
+    </td>
+</tr>
+}
+
+</table>

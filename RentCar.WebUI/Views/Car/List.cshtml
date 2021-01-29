@@ -1,0 +1,109 @@
+﻿@using RentCar.WebUI.Models
+@using RentCar.WebUI.HtmlHelpers
+@model CarsListViewModel
+@{
+    ViewBag.Title = "Товары";
+}
+
+<form method="get">
+    <div class="form-inline" style="float:left;">
+        <label class="control-label">
+            Категория:
+        </label>
+        @Html.DropDownList("category", Model.Categorys as SelectList, htmlAttributes: new { @class = "form-control" })
+        
+        <label class="control-label">
+            КПП:
+        </label>
+        @Html.DropDownList("transmission", Model.Transmissions as SelectList, htmlAttributes: new { @class = "form-control" })
+
+
+        <label class="control-label">
+            Топливо:
+        </label>
+        @Html.DropDownList("fuel", Model.Fuels as SelectList, htmlAttributes: new { @class = "form-control" })
+
+        <label class="control-label">
+            Тип кузова:
+        </label>
+        @Html.DropDownList("typeBody", Model.TypeBodys as SelectList, htmlAttributes: new { @class = "form-control" })
+        <input type="submit" value="Фильтр" class="btn btn-default" />
+    </div>
+</form>
+
+<table>
+    <tr>
+        <th>
+            Марка
+        </th>
+        <th>
+            Модель
+        </th>
+        <th>
+            Категория
+        </th>
+        <th>
+            КПП
+        </th>
+        <th>
+            Топливо
+        </th>
+        <th>
+            Кузов
+        </th>
+        <th>
+            Двигатель
+        </th>
+        <th>
+            Год
+        </th>
+        <th>
+            Стомость авто
+        </th>
+        <th>
+            Стоимость аренды авто за день
+        </th>
+    </tr>
+
+    @foreach (var item in Model.Cars)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelitem => item.Brand.NameBrand)
+    </td>
+    <td>
+        @Html.DisplayFor(modelitem => item.Brand.NameModel)
+    </td>
+    <td>
+        @Html.DisplayFor(modelitem => item.Category.NameCategory)
+    </td>
+    <td>
+        @Html.DisplayFor(modelitem => item.Transmission.NameTransmission)
+    </td>
+    <td>
+        @Html.DisplayFor(modelitem => item.Fuel.NameFuel)
+    </td>
+    <td>
+        @Html.DisplayFor(modelitem => item.TypeBody.NameBody)
+    </td>
+    <td>
+        @Html.DisplayFor(modelitem => item.volumeEndine)
+    </td>
+    <td>
+        @Html.DisplayFor(modelitem => item.year)
+    </td>
+    <td>
+        @Html.DisplayFor(modelitem => item.price)
+    </td>
+    <td>
+        @Html.DisplayFor(modelitem => item.costOfDay)
+    </td>
+    <td>
+        @Html.ActionLink("Car", "CarDescAsync", new { carid = item.NumberCar })
+    </td>
+</tr>
+    }
+</table>
+@*<div class="btn-group pull-right">
+        @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))
+    </div>*@
