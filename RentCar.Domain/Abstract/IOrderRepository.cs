@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace RentCar.Domain.Abstract
 {
-    public interface IShippingDetailRepository
+    public interface IOrderRepository
     {
-        IEnumerable<ShippingDetail> ShippingDetails { get; }
+        IEnumerable<Order> Orders { get; }
     }
 }

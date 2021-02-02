@@ -8,14 +8,15 @@ using System.Threading.Tasks;
 
 namespace RentCar.Domain.Concrete
 {
-    public class EFShippingDetail:IShippingDetailRepository
+    public class EFOrderRepository:IOrderRepository
     {
         EFDbContext db = new EFDbContext();
-        public IEnumerable<ShippingDetail> ShippingDetails
+
+        public IEnumerable<Order> Orders
         {
             get
             {
-                return db.ShippingDetails;
+                return db.Orders;
             }
         }
     }

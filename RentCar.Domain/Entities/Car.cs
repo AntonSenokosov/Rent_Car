@@ -27,5 +27,6 @@ namespace RentCar.Domain.Entities
         public string longDesc { set; get; }
         public bool isFavorite { set; get; }
         public bool available { set; get; }
+        public List<Order> Orders { get; set; }
     }
 }

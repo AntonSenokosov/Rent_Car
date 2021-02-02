@@ -40,6 +40,16 @@ namespace RentCar.WebUI.Controllers
         // GET: Cars/Create
         public ActionResult Create()
         {
+            SelectList brand = new SelectList(db.Brands, "BrandId", "NameBrand");
+            ViewBag.Brands = brand;
+            SelectList category = new SelectList(db.Categories, "CategoryId", "NameCategory");
+            ViewBag.Categories = category;
+            SelectList transmission = new SelectList(db.Transmissions, "TransmissionId", "NameTransmission");
+            ViewBag.Transmissions = transmission;
+            SelectList fuels = new SelectList(db.Fuels, "FuelId", "NameFuel");
+            ViewBag.Fuels = fuels;
+            SelectList body = new SelectList(db.TypeBodies, "BodyId", "NameBody");
+            ViewBag.TypeBodies = body;
             return View();
         }
 
@@ -63,6 +73,16 @@ namespace RentCar.WebUI.Controllers
         // GET: Cars/Edit/5
         public async Task<ActionResult> Edit(string id)
         {
+            SelectList brand = new SelectList(db.Brands, "BrandId", "NameBrand");
+            ViewBag.Brands = brand;
+            SelectList category = new SelectList(db.Categories, "CategoryId", "NameCategory");
+            ViewBag.Categories = category;
+            SelectList transmission = new SelectList(db.Transmissions, "TransmissionId", "NameTransmission");
+            ViewBag.Transmissions = transmission;
+            SelectList fuels = new SelectList(db.Fuels, "FuelId", "NameFuel");
+            ViewBag.Fuels = fuels;
+            SelectList body = new SelectList(db.TypeBodies, "BodyId", "NameBody");
+            ViewBag.TypeBodies = body;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

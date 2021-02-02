@@ -1,0 +1,82 @@
+﻿@model IEnumerable<RentCar.Domain.Entities.Order>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CitySupply)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlaceSupply)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CityReturn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlaceReturn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateSupply)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateReturn)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CitySupply)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlaceSupply)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CityReturn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlaceReturn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateSupply)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateReturn)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OrderId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OrderId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OrderId })
+        </td>
+    </tr>
+}
+
+</table>

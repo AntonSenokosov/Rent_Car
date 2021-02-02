@@ -8,7 +8,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Добавить авто", "Create")
 </p>
 <table class="table">
     <tr>
@@ -72,8 +72,8 @@
             @Html.DisplayFor(modelItem => item.available)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.NumberCar }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.NumberCar })
+            @Html.ActionLink("Редактировать", "Edit", new { id=item.NumberCar }) |
+            @Html.ActionLink("Удалить", "Delete", new { id=item.NumberCar })
         </td>
     </tr>
 }

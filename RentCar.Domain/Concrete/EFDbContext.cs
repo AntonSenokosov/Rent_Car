@@ -18,6 +18,6 @@ namespace RentCar.Domain.Concrete
         public DbSet<Fuel> Fuels { get; set; }
         public DbSet<Transmission> Transmissions { get; set; }
         public DbSet<TypeBody> TypeBodies { get; set; }
-        public DbSet<ShippingDetail> ShippingDetails { get; set; }
+        public DbSet<Order> Orders { get; set; }
     }
 }

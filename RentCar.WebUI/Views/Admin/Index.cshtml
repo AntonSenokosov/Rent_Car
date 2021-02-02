@@ -6,4 +6,9 @@
 
 <h2>Index</h2>
 
-<a href="Index.cshtml">Cars</a>
+@Html.RouteLink("Автомобили", new { Controller = "Cars", action = "Index" })
+@Html.RouteLink("Категории авто", new { Controller = "Categories", action = "Index" })
+@Html.RouteLink("Марка авто", new { Controller = "Brands", action = "Index" })
+@Html.RouteLink("Топливо", new { Controller = "Fuels", action = "Index" })
+@Html.RouteLink("КПП", new { Controller = "Transmissions", action = "Index" })
+@Html.RouteLink("Кузов", new { Controller = "TypeBodies", action = "Index" })
